@@ -3,7 +3,7 @@ Lab of Embedded System Teaching
 
 # 嵌入式系统教学-ARM汇编指令实验仿真
 
-ARM指令集编程调试实验教程
+ARM指令集编程调试实验教程文档：
 ARM指令集编程调试实验教程第一课（qemu gdb asm)
 ARM指令集编程调试实验教程第二课 (Makefile,ddd,寄存器寻址方式，ex1-ex5）
 ARM体系结构数据类型及寄存器堆栈操作实验(ex6 datastuct)
