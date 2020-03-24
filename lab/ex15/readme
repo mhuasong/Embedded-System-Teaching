@@ -1,0 +1,29 @@
+U-boot:
+tar jxvf u-boot-2010.09.tar.bz2
+cd 
+make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- versatilepb_config
+make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- -s
+sudo ln -sf $PWD/tools/mkimage /usr/local/bin/mkimage
+
+start u-boot:
+qemu-system-arm -M versatilepb -nographic -kernel u-boot
+
+Debug U-Boot:
+1) qemu-system-arm -M versatilepb  -m 128M -gdb tcp::1024 -serial stdio -kernel u-boot -S
+2) ddd --debugger arm-none-linux-gnueabi-gdb u-boot
+
+make image file:
+mkimage -A arm -C none -O linux -T kernel -d test.bin -a 0x00300000 -e 0x00300000 test.uimg
+
+combine:
+#cat u-boot.bin test.uimg > flash.bin
+
+Calculate the starting address of the test program in the flash.bin file:
+printf "0x%X\n" $(expr $(stat -c%s u-boot.bin) + 65536)
+
+run:
+qemu-system-arm -M versatilepb -serial stdio -semihosting -kernel flash.bin
+
+load in U-Boot:
+iminfo 0x25590
+bootm 0x25590
