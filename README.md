@@ -27,6 +27,7 @@ ARM编程调试实验教程第十课 (U-Boot仿真调试实验: ex15)
 
 ARM编程调试实验教程第11课 (U-Boot/ram/linux kernel/rootfs仿真调试实验: ex16)
 
+ARM编程调试实验教程第12课 (ARM linux设备驱动、helloworld\thread\framebuffer仿真实验: examples)
 ********************************************************************************
 
 ARM指令集编程仿真调试实验：
@@ -72,6 +73,8 @@ ex14: LCD显示中文字符、中断处理机制、键盘驱动
 ex15: U-Boot仿真调试
 
 ex16: U-Boot/ram/linux kernel/rootfs联合仿真调试实验
+
+examples: ARM linux driver\helloworld\thread\framebuffer仿真实验
 
 注：本实验教程为武汉科技大学机器人与智能系统研究院闵华松老师的网络课程教学文档，可以复制，不做商业用途。
 
